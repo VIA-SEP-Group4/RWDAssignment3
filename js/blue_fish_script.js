@@ -1,7 +1,9 @@
-$("#fish2Id").on("mouseover", function(){
+$("#fish2Id").on("mouseover", function(e){
     $(this).stop(true);
     var posY = getRandom(0, $(document).height() - 150);
     var posX = getRandom(0, $(document).width() - 150);
+    if(e.pageX>posX) $(this).css({'transform':'scaleX(-1)'});
+    else $(this).css({'transform':'scaleX(1)'});
     $(this).animate({top: posY, left:posX},"slow");
     randomMovement(this);
 })
@@ -18,3 +20,4 @@ function randomMovement(idRef){
         randomMovement(idRef);
     });
 };
+
