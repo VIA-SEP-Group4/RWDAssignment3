@@ -31,3 +31,9 @@ img {
   width: 20px;
   height: 20px;
 }
+
+#scubaDiver {
+  position: absolute;
+  width: 300px;
+  height: auto;
+}
