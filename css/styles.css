@@ -25,6 +25,8 @@ img {
 .bubbleClass {
   width: 100px;
   height: 100px;
+
+  z-index: 0;
 }
 
 .smallBubbleClass {
@@ -36,4 +38,6 @@ img {
   position: absolute;
   width: 300px;
   height: auto;
+
+  z-index: 0;
 }

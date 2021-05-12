@@ -19,6 +19,9 @@ function bubbleMove(bubble)
 {
     putMeOnTheBottom(bubble);
     
+    let zIndex = (Math.floor(Math.random()*2));
+    $(bubble).css("z-index",zIndex+'');
+
     let speed = Math.random() * 3000 + 5000;
     $(bubble).animate({top: 0}, speed, "linear", function(){bubbleMove(bubble)});
 }
@@ -26,6 +29,9 @@ function bubbleMove(bubble)
 function smallBubbleMove(bubble)
 {
     putMeOnTheBottom(bubble);
+
+    let zIndex = (Math.floor(Math.random()*2));
+    $(bubble).css("z-index",zIndex+'');
 
     let randomSize = Math.random()*30 +20; 
     $(bubble).css({
