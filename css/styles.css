@@ -1,6 +1,7 @@
 body {
   background-image: url("../images/aquarium.jpg");
   background-size: cover;
+  overflow-y: hidden;
 }
 
 img {
@@ -21,7 +22,14 @@ img {
   height: 150px;
   position: relative;
 }
-
+#cthulhuId{
+  position: relative;
+  width:300px;
+  height:300px;
+  left: 600px;
+  top:700px;
+  
+}
 .bubbleClass {
   width: 100px;
   height: 100px;

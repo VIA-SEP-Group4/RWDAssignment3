@@ -1,7 +1,7 @@
 $("#fish2Id").on("mouseover", function(e){
     $(this).stop(true);
     var posX = getRandom(0, $(document).width() - 150);
-    var posY = getRandom(0, $(document).height() - 150);
+    var posY = getRandom(0, $(document).height() - 200);
     if(e.pageX>posX) $(this).css({'transform':'scaleX(-1)'});
     else $(this).css({'transform':'scaleX(1)'});
     $("#fish2Id").animate({top: posY,left: posX},1000,function(){
@@ -18,7 +18,7 @@ function getRandom(min, max) {
 };
 
 function randomMovement(idRef){
-    var posY = getRandom(0, $(document).height() - 150);
+    var posY = getRandom(0, $(document).height() - 200);
     var posX = getRandom(0, $(document).width() - 150);
     var elPosX=$(idRef).offset().left;
     if(posX<elPosX) $(idRef).css({'transform':'scaleX(-1)'});
