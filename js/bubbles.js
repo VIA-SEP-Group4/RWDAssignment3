@@ -73,58 +73,55 @@ $(".bubbleClass").each(function(){
 
 
 //  ---scubaDiver:
-let diver = document.querySelector("#scubaDiver")
 
-/// store key codes and currently pressed ones
+//set constants needed
+const UP = 38;
+const LEFT = 37;
+const RIGHT = 39;
+const DOWN = 40;
+const speedMultiplier = 5;
+
+//store key codes and currently pressed ones
 var keys = {};
-keys.UP = 38;
-keys.LEFT = 37;
-keys.RIGHT = 39;
-keys.DOWN = 40;
 
-/// store reference to character's position and element
-var character = {
-    x: $(diver).offset().left,
-    y: $(diver).offset().top,
-    speedMultiplier: 5,
-    element: diver
+//store reference to character's position and element
+var diver = {
+    pozX: $("#scubaDiver").offset().left,
+    pozY: $("#scubaDiver").offset().top,
+    ref: document.querySelector("#scubaDiver")
 };
 
-/// key detection (better to use addEventListener, but this will do)
+//key detection (better to use addEventListener?)
 document.body.onkeyup = 
 document.body.onkeydown = function(e){
-    /// prevent default browser handling of keypresses
-    if (e.preventDefault) { 
-        e.preventDefault();
-    }
-    else {
-        e.returnValue = false; 
-    }
-    keys[e.keyCode] = e.type == 'keydown';
+    keys[e.keyCode] = (e.type == 'keydown');
+    //console.log(keys);
 };
 
-/// character movement update
+//character movement update
 var moveCharacter = function(dx, dy){
-    character.x += (dx) * character.speedMultiplier;
-    character.y += (dy) * character.speedMultiplier;
-    character.element.style.left = character.x + 'px';
-    character.element.style.top = character.y + 'px';
+    diver.pozX += (dx) * speedMultiplier;
+    diver.pozY += (dy) * speedMultiplier;
+    //character.element.style.left = character.x + 'px';
+    $(diver.ref).offset({left: diver.pozX});
+    //character.element.style.top = character.y + 'px';
+    $(diver.ref).offset({top: diver.pozY});
 };
 
-/// character control
+//character control
 var detectCharacterMovement = function(){
-    if ( keys[keys.LEFT] ) {
-        $(diver).css({'transform':'scaleX(1)'})
+    if ( keys[LEFT] ) {
+        $(diver.ref).css({'transform':'scaleX(1)'})
         moveCharacter(-1, 0);
     }
-    if ( keys[keys.RIGHT] ) {
-        $(diver).css({'transform':'scaleX(-1)'})
+    if ( keys[RIGHT] ) {
+        $(diver.ref).css({'transform':'scaleX(-1)'})
         moveCharacter(1, 0);
     }
-    if ( keys[keys.UP] ) {
+    if ( keys[UP] ) {
         moveCharacter(0, -1);
     }
-    if ( keys[keys.DOWN] ) {
+    if ( keys[DOWN] ) {
         moveCharacter(0, 1);
     }
 };
@@ -133,4 +130,4 @@ var detectCharacterMovement = function(){
 // movement-loop
 setInterval(function(){
     detectCharacterMovement();
-}, 1000/24);
+}, 50);
