@@ -57,3 +57,15 @@ img {
 
   z-index: 0;
 }
+
+#oysterId{
+  position: absolute;
+  left: 900px;
+  top: 800px; 
+
+}
+.oystBubbleClass {
+  width: 10px;
+  height: 10px;
+}
+
