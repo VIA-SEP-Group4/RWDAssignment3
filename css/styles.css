@@ -30,13 +30,12 @@ img {
   width: 270px;
 }
 
-#cthulhuId{
+#cthulhuId {
   position: relative;
-  width:300px;
-  height:300px;
+  width: 300px;
+  height: 300px;
   left: 400px;
-  top:400px;
-  
+  top: 400px;
 }
 .bubbleClass {
   width: 100px;
@@ -50,7 +49,7 @@ img {
   height: 20px;
 }
 
-#scubaDiver {
+#scubaDiverId {
   position: absolute;
   width: 300px;
   height: auto;
@@ -58,14 +57,10 @@ img {
   z-index: 0;
 }
 
-#oysterId{
+#oysterId {
   position: absolute;
-  left: 900px;
-  top: 800px; 
-
 }
 .oystBubbleClass {
   width: 10px;
   height: 10px;
 }
-

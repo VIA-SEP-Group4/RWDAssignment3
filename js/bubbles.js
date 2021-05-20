@@ -86,9 +86,9 @@ var keys = {};
 
 //store reference to character's position and element
 var diver = {
-    pozX: $("#scubaDiver").offset().left,
-    pozY: $("#scubaDiver").offset().top,
-    ref: document.querySelector("#scubaDiver")
+    pozX: $("#scubaDiverId").offset().left,
+    pozY: $("#scubaDiverId").offset().top,
+    ref: document.querySelector("#scubaDiverId")
 };
 
 //key detection (better to use addEventListener?)
