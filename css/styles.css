@@ -24,6 +24,10 @@ img {
   position: relative;
 }
 
+#deadFish {
+  position: relative;
+}
+
 #octopus {
   left: 600px;
   top: 600px;
