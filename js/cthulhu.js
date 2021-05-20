@@ -8,41 +8,41 @@ $(document).ready(function(){
         if(key==67) 
             cthulhuRises();
         else if(key==68){
-            $("#cthulhuId").fadeOut(1000);
+            $("#cthulhuId").fadeOut();
             cthulhuAudio.pause();
         }
         
     });
 });
-$(document).ready(function(){
-    $(this).on("click",function(e){
-        console.log("X: "+e.pageX);
-        console.log("Y:"+e.pageY);
-    })
-    console.log($(this).width());
-    console.log($(this).height());
-});
+
 
 
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-function cthulhuRises(i){
+function cthulhuRises(){
     var cthulhuAudio=document.getElementById("cthulhuAudio");
    
     cthulhuAudio.currentTime=0;
     $("#cthulhuId").fadeIn(1000);
     cthulhuAudio.play();
-    cthulhuMove("#cthulhuId");
+    moveCthulhuInCircles("#cthulhuId");
     
 };
-function cthulhuMove(id){
-    var x=getRandom(0,$(document).width()-300);
-    var y=getRandom(0,$(document).height()-300);
-    $(id).animate({top: y,left: 3}).delay(1000)
-    .animate({top: 3,left: x}).delay(1000)
-    .animate({top: y,left: $(document).width()-450 }).delay(1000)
-    .animate({top: $(document).height()-300,left:x },function(){
-        cthulhuMove(id);
-    }).delay(1000);
+
+var t = 0;
+
+function moveCthulhuInCircles() {
+    t += 0.05;
+    var r = 350;
+    var x = 400;
+    var y = 400;
+    var newX = Math.floor(x + (r * Math.cos(t)));
+    var newY = Math.floor(y + (r * Math.sin(t)));
+    $("#cthulhuId").animate({
+        top: newX,
+        left: newY,
+    }, 10, function() {
+        moveCthulhuInCircles();
+    });
 }
