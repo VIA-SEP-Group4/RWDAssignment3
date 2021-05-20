@@ -1,7 +1,7 @@
 body {
   background-image: url("../images/aquarium.jpg");
   background-size: cover;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 img {
@@ -34,13 +34,12 @@ img {
   width: 270px;
 }
 
-#cthulhuId{
+#cthulhuId {
   position: relative;
-  width:300px;
-  height:300px;
-  left: 600px;
-  top:700px;
-  
+  width: 300px;
+  height: 300px;
+  left: 400px;
+  top: 400px;
 }
 .bubbleClass {
   width: 100px;
@@ -54,10 +53,18 @@ img {
   height: 20px;
 }
 
-#scubaDiver {
+#scubaDiverId {
   position: absolute;
   width: 300px;
   height: auto;
 
   z-index: 0;
+}
+
+#oysterId {
+  position: absolute;
+}
+.oystBubbleClass {
+  width: 10px;
+  height: 10px;
 }
